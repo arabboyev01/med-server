@@ -11,16 +11,17 @@ datasource db {
 }
 
 model User {
-  id      Int      @id @default(autoincrement())
-  fullName    String
-  username   String   @unique
-  password String
+  id       Int      @id @default(autoincrement())
+  fullName String
+  username  String   @unique
+  password  String
+  userData  UserData?
 }
 
 model UserData {
-  id      Int      @id @default(autoincrement())
-  location     String
-  calls     String
-  user    User     @relation(fields: [userId], references: [id])
-  userId  Int      @unique
+  id       Int      @id @default(autoincrement())
+  location String
+  calls    String[]  // Assuming calls are stored as an array of strings
+  user     User     @relation(fields: [userId], references: [id])
+  userId   Int      @unique
 }
