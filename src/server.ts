@@ -4,7 +4,7 @@ import { loginRoute } from './routes/login-user'
 import { userInfoRoute } from './routes/user-info'
 
 const app = express()
-const port = 8080
+const port = 9002
 app.use(express.json())
 
 app.get('/', (req: Request, res: Response) => {
