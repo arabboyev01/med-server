@@ -16,7 +16,7 @@ signUpRoute.post('/', async (req: Request, res: Response) => {
             },
         })
 
-        res.json({ user })
+        res.json(user)
     } catch (error) {
         res.status(500).send({ error: 'An error occurred during sign-up.' })
     }

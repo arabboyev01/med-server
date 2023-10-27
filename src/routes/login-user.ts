@@ -14,12 +14,11 @@ loginRoute.post('/', async (req: Request, res: Response) => {
             throw new Error
         }
 
-
         if (singleUser.password !== password) {
             throw new Error
         }
-
-        res.json({ singleUser })
+        
+        res.json(singleUser)
     } catch (error) {
         res.status(500).send({ error: 'An error occurred during login.' })
     }
